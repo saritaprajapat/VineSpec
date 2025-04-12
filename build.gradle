@@ -1,0 +1,26 @@
+// Project-level build.gradle
+
+buildscript {
+    ext {
+        gradle_version = '7.3.0'  // Downgrade Gradle plugin version
+    }
+    repositories {
+        google()          
+        mavenCentral()    
+        gradlePluginPortal()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradle_version"
+        classpath 'com.google.gms:google-services:4.4.0'
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
+
+//wrapper {
+//    gradleVersion = '8.0'
+//    distributionType = 'ALL'
+//}
